@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+.navbar {
+        background: linear-gradient(to right, #4bc6cd, #399cff);
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        font-size: 20px;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: top 0.3s; /* Ensures navbar is on top of other content */
+    }
+    .navbar a {
+        color: white;
+        padding: 14px 15px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        transition: transform 0.3s ease, color 0.3s; /* Smooth transition for transform and color */
+    }
+
+    .navbar a::after {
+        text-decoration: underline;
+        text-decoration-color: #8fc7c9; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px;  /* Transition for color and visibility */
+    }
+    
+    .indented {
+    margin-left: 20px; /* Adjust the indentation */
+}
+    .navbar a:hover {
+       /* color: #2a2a74;*/
+        transform: scale(1.1);
+    }
+
+
+
+    .navbar a:hover::after {
+        opacity: 1; /* Make underline visible on hover */
+        /*background-color: #2a2a74; /* Final color of the underline */
+        width: 100%; /* Full width on hover */
+    }
+
+
+    .navbar a:hover {
+        text-decoration: underline;
+       /* text-decoration-color: #2a2a74; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px; 
+        
+
+        
+    }
+    
+/*
+    .gif-overlay {
+           position: fixed; 
+           top: 0;
+           left: 0;
+           width: 30%;
+           height: 30%;
+           background-image: url('bub.gif'); 
+           background-size: initial;
+           background-repeat: no-repeat;
+           z-index: -1; 
+           filter: hue-rotate(320deg)
+       }
+       */
+    
+
+    .progress-bar {
+        width: 0%; /* Initial width */
+        height: 5px; /* Height of the progress bar */
+        background-color: #6d6dbe; /* Color of the progress bar */
+        position: fixed; /* Fixed at the top */
+        margin-top: 10 vw;
+        margin-left: 10 vw;
+        margin-right: 10 vw;
+        transition: width 0.4s ease; /* Smooth transition for width change */
+        z-index: 1001;
+    }
+
+         .text {
+          line-height: 1.6;
+        margin-bottom: 8vw;
+        margin-top: 2vw; /* Existing bottom margin */
+        margin-left: 10vw; /* New left margin */
+        margin-right: 10vw;
+        font-size: 19px; /* New right margin */
+        font-weight: 10;
+    }
+
+    .textlong {
+          line-height: 1.6;
+        margin-bottom: 0vw;
+        margin-top: 0vw; /* Existing bottom margin */
+        margin-left: 10vw; /* New left margin */
+        margin-right: 2vw;
+        font-size: 19px; /* New right margin */
+        font-weight: 10;
+    }
+        body {
+   background-color: rgb(229, 249, 255); /* Light blue background */
+   /*background: linear-gradient(to right, rgb(207, 238, 248), rgb(133, 222, 249));*/
+  }
+        body {
+          /*  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);*/
+            font-family: 'Lato', sans-serif;
+            color: #2a2a74;
+            font-size: 24px;
+            font-weight: 500;
+            word-wrap: break-word;
+            
+        }
+
+        .title {
+        margin-bottom: 2vw;
+        text-align: left;
+        margin-left: 2vw; /* New left margin */
+        margin-right: 10vw;
+        font-size: 24px; /* New right margin */
+        font-weight: 700;
+    }
+        
+        .submit-button {
+        background: linear-gradient(to right, #4bc6cd, #399cff); /* Dark blue background */
+        color: white; /* White text */
+        padding: 15px 80px; /* Padding around the text */
+        font-size: 20px; /* Text size */
+        border: none; /* No border */
+        border-radius: 30px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+        margin-bottom: 50px;
+    }
+
+    
+
+    .rotated-image {
+          transform: rotate(5deg); /* Rotate image by 10 degrees */
+        }
+
+    .submit-button:hover {
+        text-decoration: underline;
+        text-decoration-color: #ffffff; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px;  /* Transition for color and visibility */
+        font-size: 22px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition for font size */
+    }
+   
+
+    .options input[type="radio"] {
+        margin: 0 15px;
+        opacity: .8;
+        background: rgb(229, 249, 255); /* Default background */
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+
+
+
+    .options input.blue:hover {
+        background-color: #00008b; /* Blue on hover */
+    }
+
+    .options input.light:hover {
+        background-color: #0062ff; /* Red on hover */
+    }
+
+    .options input.purple:hover {
+        background-color: #8e00a7; /* Green on hover */
+    }
+
+    
+    .container2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.column {
+    flex: 1; /* Each column takes equal space */
+    margin: .5vw;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: linear-gradient(to right, #4b83cd, #7373d2);
+    border-radius: 8px;
+
+
+    
+}
+.container {
+      background: linear-gradient(to right, #4b83cd, #7373d2); /* Example background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    display: inline-flex; /* Makes the container a flex container but only as wide as its content */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5vw;
+   
+
+     /* Padding around the content */
+    /* Additional styling */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
+}
+.title2 {
+        margin-bottom: 2vw;
+        text-align: center;
+        margin-left: 0vw; /* New left margin */
+        margin-right: 0vw;
+        font-size: 24px; /* New right margin */
+        font-weight: 700;
+        margin-top: -1vw;
+        color: #fff;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="personalities.html"><i class="fas fa-user"></i> Personalities</a>
+        <a href="page1.html"><i class="fas fa-vial"></i> The Test</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <!-- Add other links as needed -->
+    </div>
+    <div class="gif-overlay">
+        <!-- This div will hold the GIF -->
+    </div>
+
+<div class="personality-test-app" style="text-align: center; margin-top: 120px; width: 100vw; height: 100vh;">
+
+  
+
+
+ 
+    <div class="text" style="margin-bottom: 40px; font-weight: 50;"> <!-- Increased spacing between questions -->
+        <p>Your personality type is:
+        </p>
+    </div>
+    <div class="text" style="font-size: 36px; margin-top: -15px; font-weight: 700;">
+        <p>Ahab</p>
+    </div>
+ 
+
+    
+    <div style="margin-top: -6vw;">
+      <div class="text" style="margin-bottom: 40px; font-weight: 50; font-style: italic;">
+        <p>Ahabs are strong-willed, independent captains, who know how to motivate and inspire those around them.
+        </p>
+      </div>
+      <div style="margin-top: -2vw;">
+        <img src="Ahab2.png" alt="Descriptive Image" style="width: 280px; height: auto;" class="rotated-image">
+      </div>
+      
+      
+    </div>
+ 
+    
+<div class="container"; style="color: #fff"; style="background-color: #00008b; font-size: 18px;">
+  <div style="font-size: 20px;">
+  “What I've dared, I've willed; and what I've willed, I'll do!” 
+  </div>
+</div>
+     
+    <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 2vw; opacity: 0.3; margin-top: 3vw;">
+    <div class="title">
+      <p>Introduction</p>
+    </div>
+    <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw;">
+      <p>Ahabs are captains of the ship and would be very unhappy being any other member of the crew. They are highly opinionated, driven, and persistent, and will stop at nothing to catch their “Moby Dick”. While they have some moments of reflection, this doesn’t stop them from acting rashly, often blinded by their ambitions. However, they shouldn’t be mistaken for mindless power-chasers – their ability to find religious and spiritual meaning in something as mundane as fish or see the greater characteristics of humanity in their goals lends them influence over their crew and gives meaning to their goals.
+       <br><br>
+        
+        Despite being among a whole crew of capable seamen, Ahabs prefer to take important tasks into their own hands, often watching for whales from the mast themselves or taking their own boat out onto the sea. However, they should be wary about spreading themselves too thin; sometimes, their need for control over every part of their ship can come at the cost of their health, or even their sanity. 
+        
+         </p>
+    </div>
+    <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 2vw; opacity: 0.3; margin-top: 3vw;">
+    <div class="title">
+      <p>Compatibility with other personalities</p>
+    </div>
+    <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw;">
+      <p>Ahabs can often successfully forge many lasting, professional relationships, especially with more flexible and easy-going personalities, such as Stubbs and Carpenters. These relationships will be crucial for Ahabs, as their goals are often too ambitious for them to carry out alone. While Ahabs take advantage of many of these relationships in their life to realize their goals, they form true bonds with very few. A Pip – someone equally free-spirited and imaginative, but less ambitious – can often bring out the humanity in Ahabs and help them take a step back from their goals. Close relationships with Pips can help Ahabs open up to other personalities as well, and steer their ambitions towards good. </p>
+    </div>
+    <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 2vw; opacity: 0.3; margin-top: 2vw;">
+    <div class="container2">
+      <div class="column">
+          <div class="title2">
+            <p>Strengths</p>
+          </div>
+          <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw; color: #fff;">
+      
+              <ul>
+                <li><i>Motivated:</i> <br>
+                  Ahabs’ never-ending ambitions can seem inhuman at times. If directed towards the right cause, Ahabs can change the world – if not, they can throw themselves and everyone else overboard. 
+                </li>
+                <li><i>Strong-willed:</i> <br>
+                   Self-reliant and confident in their abilities, Ahabs are the unbending forces on every crew. They are willing to put their life on the line for what they believe in. 
+                <li><i>Direct:</i> <br>
+                  Ahabs are too busy charging towards their goal to be manipulative or secretive. When Ahabs reveal their opinions and goals, you can be sure that they’re telling the truth.
+                </li>
+            </ul>
+          </div>
+      </div>
+      <div class="column">
+        <div class="title2">
+          <p>Weaknesses</p>
+        </div>
+        <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw; color: #fff;">
+      
+          <ul>
+            <li><i>Narrow-minded:</i> <br>
+              Ahabs struggle to realize that their ideals aren’t always the right ones, and are quick to feel personally attacked in the face of criticism. While they might see all the signs of impending failure, Ahabs often refuse to give up until it’s too late.
+            </li>
+            <li><i>Lacking self-awareness:</i> <br>
+              With single-minded goals and few genuine connections with others, Ahabs tend to struggle with introspection and recognizing their faults. 
+            <li><i>Difficulty connecting with others:</i> <br>
+              Their ambitions lead Ahabs to easily throw away their relationships in favor of greater goals. Ahabs should be careful to not isolate themselves, especially from those who just want the best for them. 
+            </li>
+        </ul>
+      </div>
+      </div>
+  </div>
+
+
+    
+  <!--</div>-->
+   
+</div>
+<script>
+    
+    function setProgress(percent) {
+        const progressBar = document.querySelector('.progress-bar');
+        progressBar.style.width = percent + '%';
+    }
+
+    // Example usage: Update progress on page load
+    document.addEventListener('DOMContentLoaded', function() {
+    setProgress(0); // Set to 25% for page 1 as an example
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.options input[type="radio"]').forEach(input => {
+      input.addEventListener('click', function() {
+        // Clear previously selected input's background within the same options div
+        const siblings = this.closest('.options').querySelectorAll('input[type="radio"]');
+        siblings.forEach(sib => sib.style.background = 'rgb(229,249,255)'); // Reset background color
+
+        // Determine the index of the clicked input and set the background color accordingly
+        const index = Array.from(siblings).indexOf(input);
+        if (index < 3) {
+          input.style.background = '#00008b'; 
+        } else if (index === 3) {
+          input.style.background = '#0062ff';
+        } else {
+          input.style.background = '#8e00a7'; 
+        }
+      });
+    });
+  });
+
+  
+
+  function calculateResult() {
+    console.log("Starting calculateResult");
+    const form = document.getElementById('personalityForm');
+    let score1 = 0;
+   
+
+    // Assuming there are 24 questions based on the provided HTML structure
+    const totalQuestions1 = 4; 
+    console.log("Before processing scores");
+    
+
+    // Refactored function to process question groups
+    function processQuestionGroup(startIndex, endIndex, form, score) {
+      let localScore = 0;
+      for (let i = startIndex; i <= endIndex; i++) {
+        const radios = form['question' + i];
+        for (let radio of radios) {
+          if (radio.checked) {
+            localScore += parseInt(radio.value);
+            break;
+          }
+        }
+      }
+      return localScore;
+    }
+    console.log("Scores processed");
+    // Calculate scores using the refactored function
+    score1 = processQuestionGroup(1, totalQuestions1, form, score1);
+    console.log("Preparing to call callback");
+
+    const average1 = score1 / totalQuestions1;
+ 
+
+   
+
+    // Determine personality type based on average score
+    function determineBinary(average) {
+      if (average < 3) {
+        return 0;
+      } else {
+        return 1;
+      }
+    }
+    
+
+    bin1 = determineBinary(average1);
+    storeNumber(bin1);
+    console.log("Hehe");
+    
+
+  }
+ 
+function storeNumber(number) {
+    localStorage.setItem('bin1', number);
+}
+</script>
+</body>
+</html>
+

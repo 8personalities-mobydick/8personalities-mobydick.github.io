@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+.navbar {
+        background: linear-gradient(to right, #4bc6cd, #399cff);
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        font-size: 20px;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: top 0.3s; /* Ensures navbar is on top of other content */
+    }
+    .navbar a {
+        color: white;
+        padding: 14px 15px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        transition: transform 0.3s ease, color 0.3s; /* Smooth transition for transform and color */
+    }
+
+    .navbar a::after {
+        text-decoration: underline;
+        text-decoration-color: #8fc7c9; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px;  /* Transition for color and visibility */
+    }
+    
+    .indented {
+    margin-left: 20px; /* Adjust the indentation */
+}
+    .navbar a:hover {
+       /* color: #2a2a74;*/
+        transform: scale(1.1);
+    }
+
+
+
+    .navbar a:hover::after {
+        opacity: 1; /* Make underline visible on hover */
+        /*background-color: #2a2a74; /* Final color of the underline */
+        width: 100%; /* Full width on hover */
+    }
+
+
+    .navbar a:hover {
+        text-decoration: underline;
+       /* text-decoration-color: #2a2a74; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px; 
+        
+
+        
+    }
+    
+/*
+    .gif-overlay {
+           position: fixed; 
+           top: 0;
+           left: 0;
+           width: 30%;
+           height: 30%;
+           background-image: url('bub.gif'); 
+           background-size: initial;
+           background-repeat: no-repeat;
+           z-index: -1; 
+           filter: hue-rotate(320deg)
+       }
+       */
+    
+
+    .progress-bar {
+        width: 0%; /* Initial width */
+        height: 5px; /* Height of the progress bar */
+        background-color: #6d6dbe; /* Color of the progress bar */
+        position: fixed; /* Fixed at the top */
+        margin-top: 10 vw;
+        margin-left: 10 vw;
+        margin-right: 10 vw;
+        transition: width 0.4s ease; /* Smooth transition for width change */
+        z-index: 1001;
+    }
+
+         .text {
+          line-height: 1.6;
+        margin-bottom: 8vw;
+        margin-top: 2vw; /* Existing bottom margin */
+        margin-left: 10vw; /* New left margin */
+        margin-right: 10vw;
+        font-size: 19px; /* New right margin */
+        font-weight: 10;
+    }
+
+    .textlong {
+          line-height: 1.6;
+        margin-bottom: 0vw;
+        margin-top: 0vw; /* Existing bottom margin */
+        margin-left: 10vw; /* New left margin */
+        margin-right: 2vw;
+        font-size: 19px; /* New right margin */
+        font-weight: 10;
+    }
+        body {
+   background-color: rgb(229, 249, 255); /* Light blue background */
+   /*background: linear-gradient(to right, rgb(207, 238, 248), rgb(133, 222, 249));*/
+  }
+        body {
+          /*  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);*/
+            font-family: 'Lato', sans-serif;
+            color: #2a2a74;
+            font-size: 24px;
+            font-weight: 500;
+            word-wrap: break-word;
+            
+        }
+
+        .title {
+        margin-bottom: 2vw;
+        text-align: left;
+        margin-left: 2vw; /* New left margin */
+        margin-right: 10vw;
+        font-size: 24px; /* New right margin */
+        font-weight: 700;
+    }
+        
+        .submit-button {
+        background: linear-gradient(to right, #4bc6cd, #399cff); /* Dark blue background */
+        color: white; /* White text */
+        padding: 15px 80px; /* Padding around the text */
+        font-size: 20px; /* Text size */
+        border: none; /* No border */
+        border-radius: 30px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+        margin-bottom: 50px;
+    }
+
+    
+
+    .rotated-image {
+          transform: rotate(5deg); /* Rotate image by 10 degrees */
+        }
+
+    .submit-button:hover {
+        text-decoration: underline;
+        text-decoration-color: #ffffff; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px;  /* Transition for color and visibility */
+        font-size: 22px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition for font size */
+    }
+   
+
+    .options input[type="radio"] {
+        margin: 0 15px;
+        opacity: .8;
+        background: rgb(229, 249, 255); /* Default background */
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+
+
+
+    .options input.blue:hover {
+        background-color: #00008b; /* Blue on hover */
+    }
+
+    .options input.light:hover {
+        background-color: #0062ff; /* Red on hover */
+    }
+
+    .options input.purple:hover {
+        background-color: #8e00a7; /* Green on hover */
+    }
+
+    
+    .container2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.column {
+    flex: 1; /* Each column takes equal space */
+    margin: .5vw;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: linear-gradient(to right, #4b83cd, #7373d2);
+    border-radius: 8px;
+
+
+    
+}
+.container {
+      background: linear-gradient(to right, #4b83cd, #7373d2); /* Example background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    display: inline-flex; /* Makes the container a flex container but only as wide as its content */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5vw;
+    width: 80vw; /* Reduced width for a more narrow appearance */
+      margin: auto;
+   
+
+     /* Padding around the content */
+    /* Additional styling */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
+}
+.title2 {
+        margin-bottom: 2vw;
+        text-align: center;
+        margin-left: 0vw; /* New left margin */
+        margin-right: 0vw;
+        font-size: 24px; /* New right margin */
+        font-weight: 700;
+        margin-top: -1vw;
+        color: #fff;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div class="navbar">
+      <a href="personalities.html"><i class="fas fa-user"></i> Personalities</a>
+      <a href="page1.html"><i class="fas fa-vial"></i> The Test</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <!-- Add other links as needed -->
+    </div>
+    <div class="gif-overlay">
+        <!-- This div will hold the GIF -->
+    </div>
+
+<div class="personality-test-app" style="text-align: center; margin-top: 120px; width: 100vw; height: 100vh;">
+
+  
+
+
+ 
+    <div class="text" style="margin-bottom: 40px; font-weight: 50;"> <!-- Increased spacing between questions -->
+        <p>Your personality type is:
+        </p>
+    </div>
+    <div class="text" style="font-size: 36px; margin-top: -15px; font-weight: 700;">
+        <p>Ishmael</p>
+    </div>
+ 
+
+    
+    <div style="margin-top: -6vw;">
+      <div class="text" style="margin-bottom: 40px; font-weight: 50; font-style: italic;">
+        <p>Ishmaels are wind-blown adventurers, ready to conquer anything with patience and a level head.
+        </p>
+      </div>
+      <div style="margin-top: -2vw;">
+        <img src="Ishmael.png" alt="Descriptive Image" style="width: 230px; height: auto;">
+      </div>
+      
+      
+    </div>
+ 
+    
+<div class="container"; style="color: #fff"; style="background-color: #00008b; font-size: 18px;">
+  <div style="font-size: 20px;">
+    “As for me, I am tormented with an everlasting itch for things remote. I love to sail forbidden seas, and land on barbarous coasts.”
+
+  </div>
+</div>
+     
+    <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 2vw; opacity: 0.3; margin-top: 3vw;">
+    <div class="title">
+      <p>Introduction</p>
+    </div>
+    <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw;">
+      <p>Ishmaels are driven by a desire to explore and understand the unknown; they don’t want to look at the sea from the dock, but rather sail out into the sea to experience the watery world for themselves. Rather than taking agency and deciding their life for themselves, however, they believe that it’s fate that brings them these opportunities and experiences.
+        <br><br>
+        
+        They view life through a philosophical, analytical lens; for Ishmaels, the hunt for a whale is about the obsessive tendencies in human nature rather than simply a career, and the monkey-rope upon a ship is more representative of intertwined human relationships than a practical tool. Such reflection brings new colors and depths to Ishmaels’ lives and offers them unique perspectives. 
+<br><br>
+While they prefer to take a less assertive role on a ship, such as being given orders as simply a member of the crew, their careful observance of the world around them lends them a wealth of knowledge, from the classification of whale types to ancient writing about whales. Their expansive knowledge can give them a sense of superiority, albeit often well-deserved. 
+
+         </p>
+    </div>
+    <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 2vw; opacity: 0.3; margin-top: 3vw;">
+    <div class="title">
+      <p>Compatibility with other personalities</p>
+    </div>
+    <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw;">
+      <p>Ishmaels’ open-mindedness allows them to work past any prejudices they may have, and develop a friendship with anyone from any culture, as long as they share a rational, introspective nature. Queequegs, who share Ishmaels’ eye for wonder and agreeable personality, tend to develop friendships – genuine, lasting ones – with Ishmaels.     </div>
+    <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 2vw; opacity: 0.3; margin-top: 2vw;">
+    <div class="container2">
+      <div class="column">
+          <div class="title2">
+            <p>Strengths</p>
+          </div>
+          <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw; color: #fff;">
+      
+              <ul>
+                <li><i>Adventurous:</i> <br>
+                  Ishmaels love the sense of adventure itself and are always ready to take on any situation that comes their way. With a healthy dose of open-mindedness, Ishmaels find delight in the unknown.
+                </li>
+                <li><i>Imaginitive:</i> <br>
+                   Life for Ishmael is far more than what meets the eye; Ishmaels see deeper meaning in everything around them. As a result, they are highly creative and a great storyteller. 
+               <li><i>Reflective:</i> <br>
+                Constantly reflecting on themselves and those around them, Ishmaels accrue an acute sense of their relationship to the world. 
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="column">
+        <div class="title2">
+          <p>Weaknesses</p>
+        </div>
+        <div class="textlong" style="font-size: 18px; text-align: left; margin-left: 2vw; margin-top: -.5vw; color: #fff;">
+      
+          <ul>
+            <li><i>Passive:</i> <br>
+              Ishmaels tend to wait for things to come to them; they rarely actively seek out the next step in their life, and scarcely plan ahead to their future aspirations. 
+
+            </li>
+            <li><i>Egotistical:</i> <br>
+              Both observant and reflective, Ishmaels tend to see what others don’t. This can give Ishmaels a feeling of self superiority.
+                  <li><i>Detached:</i> <br>
+                            Their easy-going nature also means that Ishmaels are rarely invested in the whaling hunt. They’re only along for the ride, and can sometimes even be dismissive or careless about their duties.             </li>
+        </ul>
+      </div>
+      </div>
+  </div>
+
+
+    
+  <!--</div>-->
+   
+</div>
+<script>
+    
+    function setProgress(percent) {
+        const progressBar = document.querySelector('.progress-bar');
+        progressBar.style.width = percent + '%';
+    }
+
+    // Example usage: Update progress on page load
+    document.addEventListener('DOMContentLoaded', function() {
+    setProgress(0); // Set to 25% for page 1 as an example
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.options input[type="radio"]').forEach(input => {
+      input.addEventListener('click', function() {
+        // Clear previously selected input's background within the same options div
+        const siblings = this.closest('.options').querySelectorAll('input[type="radio"]');
+        siblings.forEach(sib => sib.style.background = 'rgb(229,249,255)'); // Reset background color
+
+        // Determine the index of the clicked input and set the background color accordingly
+        const index = Array.from(siblings).indexOf(input);
+        if (index < 3) {
+          input.style.background = '#00008b'; 
+        } else if (index === 3) {
+          input.style.background = '#0062ff';
+        } else {
+          input.style.background = '#8e00a7'; 
+        }
+      });
+    });
+  });
+
+  
+
+  function calculateResult() {
+    console.log("Starting calculateResult");
+    const form = document.getElementById('personalityForm');
+    let score1 = 0;
+   
+
+    // Assuming there are 24 questions based on the provided HTML structure
+    const totalQuestions1 = 4; 
+    console.log("Before processing scores");
+    
+
+    // Refactored function to process question groups
+    function processQuestionGroup(startIndex, endIndex, form, score) {
+      let localScore = 0;
+      for (let i = startIndex; i <= endIndex; i++) {
+        const radios = form['question' + i];
+        for (let radio of radios) {
+          if (radio.checked) {
+            localScore += parseInt(radio.value);
+            break;
+          }
+        }
+      }
+      return localScore;
+    }
+    console.log("Scores processed");
+    // Calculate scores using the refactored function
+    score1 = processQuestionGroup(1, totalQuestions1, form, score1);
+    console.log("Preparing to call callback");
+
+    const average1 = score1 / totalQuestions1;
+ 
+
+   
+
+    // Determine personality type based on average score
+    function determineBinary(average) {
+      if (average < 3) {
+        return 0;
+      } else {
+        return 1;
+      }
+    }
+    
+
+    bin1 = determineBinary(average1);
+    storeNumber(bin1);
+    console.log("Hehe");
+    
+
+  }
+ 
+function storeNumber(number) {
+    localStorage.setItem('bin1', number);
+}
+</script>
+</body>
+</html>
+

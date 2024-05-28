@@ -1,0 +1,409 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+.navbar {
+        background: linear-gradient(to right, #4bc6cd, #399cff);
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        font-size: 20px;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: top 0.3s; /* Ensures navbar is on top of other content */
+    }
+    .navbar a {
+        color: white;
+        padding: 14px 15px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        transition: transform 0.3s ease, color 0.3s; /* Smooth transition for transform and color */
+    }
+
+    .navbar a::after {
+        text-decoration: underline;
+        text-decoration-color: #8fc7c9; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px;  /* Transition for color and visibility */
+    }
+    
+    .navbar a:hover {
+       /* color: #2a2a74;*/
+        transform: scale(1.1);
+    }
+
+
+
+    .navbar a:hover::after {
+        opacity: 1; /* Make underline visible on hover */
+        /*background-color: #2a2a74; /* Final color of the underline */
+        width: 100%; /* Full width on hover */
+    }
+
+
+    .navbar a:hover {
+        text-decoration: underline;
+       /* text-decoration-color: #2a2a74; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px; 
+        
+
+        
+    }
+    
+/*
+    .gif-overlay {
+           position: fixed; 
+           top: 0;
+           left: 0;
+           width: 30%;
+           height: 30%;
+           background-image: url('bub.gif'); 
+           background-size: initial;
+           background-repeat: no-repeat;
+           z-index: -1; 
+           filter: hue-rotate(320deg)
+       }
+       */
+    
+
+    .progress-bar {
+        width: 0%; /* Initial width */
+        height: 5px; /* Height of the progress bar */
+        background-color: #00008b; /* Color of the progress bar */
+        position: fixed; /* Fixed at the top */
+        margin-top: 10 vw;
+        margin-left: 10 vw;
+        margin-right: 10 vw;
+        transition: width 0.4s ease; /* Smooth transition for width change */
+        z-index: 1001;
+    }
+
+         .question {
+        margin-bottom: 8vw;
+        margin-top: 2vw; /* Existing bottom margin */
+        margin-left: 10vw; /* New left margin */
+        margin-right: 10vw; /* New right margin */
+    }
+        body {
+   background-color: rgb(229, 249, 255); /* Light blue background */
+   /*background: linear-gradient(to right, rgb(207, 238, 248), rgb(133, 222, 249));*/
+  }
+        body {
+          /*  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);*/
+            font-family: 'Lato', sans-serif;
+            color: #2a2a74;
+            font-size: 24px;
+            font-weight: 500;
+            word-wrap: break-word;
+            
+        }
+
+        
+        
+        .submit-button {
+        background: linear-gradient(to right, #4bc6cd, #399cff); /* Dark blue background */
+        color: white; /* White text */
+        padding: 15px 80px; /* Padding around the text */
+        font-size: 20px; /* Text size */
+        border: none; /* No border */
+        border-radius: 30px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+        margin-bottom: 50px;
+    }
+
+    
+
+    
+
+    .submit-button:hover {
+        text-decoration: underline;
+        text-decoration-color: #ffffff; /* Color of the underline */
+        text-decoration-thickness: 3px; /* Thickness of the underline */
+        text-underline-offset: 5px;  /* Transition for color and visibility */
+        font-size: 22px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition for font size */
+    }
+   
+
+    .options input[type="radio"] {
+        margin: 0 15px;
+        opacity: .8;
+        background: rgb(229, 249, 255); /* Default background */
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+
+
+
+    .options input.blue:hover {
+        background-color: #00008b; /* Blue on hover */
+    }
+
+    .options input.light:hover {
+        background-color: #0062ff; /* Red on hover */
+    }
+
+    .options input.purple:hover {
+        background-color: #8e00a7; /* Green on hover */
+    }
+
+    
+
+
+    
+    </style>
+</head>
+<body>
+    <div class="navbar">
+      <a href="personalities.html"><i class="fas fa-user"></i> Personalities</a>
+      <a href="page1.html"><i class="fas fa-vial"></i> The Test</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <!-- Add other links as needed -->
+    </div>
+    <div class="gif-overlay">
+        <!-- This div will hold the GIF -->
+    </div>
+
+<div class="personality-test-app" style="text-align: center; margin-top: 120px; width: 100vw; height: 100vh;">
+
+  <form id="personalityForm">
+    <div class="progress-bar" style="width: 0%; height: 5px; background-color: #00008b; position: fixed; top: 0; left: 0;"></div>
+    <div class="gif-overlay">
+        <!-- This div will hold the GIF -->
+    </div>
+
+    <div class="trait-group" style="margin-bottom: 30px;">
+    <div class="question" style="margin-bottom: 40px;"> <!-- Increased spacing between questions -->
+      <p>Out on the water, you come across another ship. Do you stop to exchange news and socialize with this ship, or continue forward on your hunt? 
+      </p>
+        <div class="options" style="margin-bottom: 40px; margin-top: 40px; display: flex; justify-content: center; align-items: center;">
+          <span style="color: #00008b; margin-right: 10px; font-size: 20px;">Stop</span>
+          <input type="radio" name="question9" class="blue" value="6" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #00008b;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question9" class="blue" value="5" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #00008b;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question9" class="blue" value="4" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #00008b;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question9" class="light" value="3" style="appearance: none; width: 27px; height: 27px; border-radius: 50%; border: 2.5px solid #0062ff;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#0062ff'">
+          <input type="radio" name="question9" class="purple" value="2" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #8e00a7;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question9" class="purple" value="1" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #8e00a7;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question9" class="purple" value="0" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #8e00a7;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <span style="color: #8e00a7; margin-left: 10px; font-size: 20px;">Continue</span>
+        </div>
+      </div>
+      <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 40px; opacity: 0.3;"> <!-- Horizontal line -->
+      <div class="question" style="margin-bottom: 40px;"> <!-- Increased spacing between questions -->
+        <p>Your shipmate who cannot swim because of a broken leg falls overboard. Do you seek help or leap into the water to rescue them?
+
+
+        </p>
+        <div class="options" style="margin-bottom: 40px; margin-top: 40px; display: flex; justify-content: center; align-items: center;">
+          <span style="color: #00008b; margin-right: 10px; font-size: 20px;">Seek help</span>
+          <input type="radio" name="question10" class="blue" value="6" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #00008b;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question10" class="blue" value="5" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question10" class="blue" value="4" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question10" class="light" value="3" style="appearance: none; width: 27px; height: 27px; border-radius: 50%; border: 2.5px solid #0062ff;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#0062ff'">
+          <input type="radio" name="question10" class="purple" value="2" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #8e00a7; cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question10" class="purple" value="1" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #8e00a7;  cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question10" class="purple" value="0" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #8e00a7;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <span style="color: #8e00a7; margin-left: 10px; font-size: 20px;">Leap</span>
+        </div>
+      </div>
+      <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 40px; opacity: 0.3;"> <!-- Horizontal line -->
+      <div class="question" style="margin-bottom: 40px;"> <!-- Increased spacing between questions -->
+        <p>In the distance, you see an aquatic creature swimming. Do you lower your boats and give chase, or sail closer to determine what animal it is?
+ 
+</p>
+        <div class="options" style="margin-bottom: 40px; margin-top: 40px; display: flex; justify-content: center; align-items: center;">
+          <span style="color: #00008b; margin-right: 10px; font-size: 20px;">Lower boats</span>
+          <input type="radio" name="question11" class="blue" value="0" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question11" class="blue" value="1" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question11" class="blue" value="2" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question11" class="light" value="3" style="appearance: none; width: 27px; height: 27px; border-radius: 50%; border: 2.5px solid #0062ff;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#0062ff'">
+          <input type="radio" name="question11" class="purple" value="4" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #8e00a7;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question11" class="purple" value="5" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #8e00a7;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question11" class="purple" value="6" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #8e00a7;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <span style="color: #8e00a7; margin-left: 10px; font-size: 20px;">Sail closer</span>
+        </div>
+      </div>
+
+      
+      <hr style="border: .5px solid #2a2a74; width: 100%; margin-bottom: 40px; opacity: 0.3;"> <!-- Horizontal line -->
+      <div class="question" style="margin-bottom: 40px;"> <!-- Increased spacing between questions -->
+        <p>You come across a rare whale species – one slowly going extinct – but it’s rarity also makes it extremely valuable. Do you give chase?
+
+        </p>
+        <div class="options" style="margin-bottom: 40px; margin-top: 40px; display: flex; justify-content: center; align-items: center;">
+          <span style="color: #00008b; margin-right: 10px; font-size: 20px;">No</span>
+          <input type="radio" name="question12" class="blue" value="6" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question12" class="blue" value="5" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question12" class="blue" value="4" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #00008b;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#00008b'">
+          <input type="radio" name="question12" class="light" value="3" style="appearance: none; width: 27px; height: 27px; border-radius: 50%; border: 2.5px solid #0062ff;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#0062ff'">
+          <input type="radio" name="question12" class="purple" value="2" style="appearance: none; width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid #8e00a7;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question12" class="purple" value="1" style="appearance: none; width: 45px; height: 45px; border-radius: 50%; border: 2.5px solid #8e00a7;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <input type="radio" name="question12" class="purple" value="0" style="appearance: none; width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid #8e00a7;   cursor: pointer; vertical-align: middle; box-shadow: none;" onclick="this.style.background='#8e00a7'">
+          <span style="color: #8e00a7; margin-left: 10px; font-size: 20px;">Yes</span>
+        </div>
+      </div>
+      
+     
+      
+
+
+
+    </div>
+    
+    <button type="button" class="submit-button" onclick="redirectToDynamicPage()">See results</button>
+  </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const storedValue = 4*parseInt(localStorage.getItem('bin1'), 10)+2*parseInt(localStorage.getItem('bin2'), 10);
+    document.getElementById('displayArea').textContent = storedValue;
+});
+
+    function redirectToDynamicPage() {
+      event.preventDefault();
+      calculateResult();
+            const filePath = `${name}.html`; // Dynamically construct the local file path
+            window.location.href = filePath; // Redirect to the local file
+        }
+
+
+
+function retrieveNumber() {
+    const number = localStorage.getItem('myNumber');
+    console.log(number); // Use the number as needed
+    //document.getElementById('displayNumber').textContent = number;
+}
+document.addEventListener('DOMContentLoaded', function() {
+        retrieveNumber();
+    });
+
+    function setProgress(percent) {
+        const progressBar = document.querySelector('.progress-bar');
+        progressBar.style.width = percent + '%';
+    }
+
+    // Example usage: Update progress on page load
+    document.addEventListener('DOMContentLoaded', function() {
+    setProgress(100); // Set to 25% for page 1 as an example
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.options input[type="radio"]').forEach(input => {
+      input.addEventListener('click', function() {
+        // Clear previously selected input's background within the same options div
+        const siblings = this.closest('.options').querySelectorAll('input[type="radio"]');
+        siblings.forEach(sib => sib.style.background = 'rgb(229,249,255)'); // Reset background color
+
+        // Determine the index of the clicked input and set the background color accordingly
+        const index = Array.from(siblings).indexOf(input);
+        if (index < 3) {
+          input.style.background = '#00008b'; 
+        } else if (index === 3) {
+          input.style.background = '#0062ff';
+        } else {
+          input.style.background = '#8e00a7'; 
+        }
+      });
+    });
+  });
+
+  
+
+  function calculateResult() {
+    console.log("Starting calculateResult");
+    const form = document.getElementById('personalityForm');
+    let score1 = 0;
+   
+
+    // Assuming there are 24 questions based on the provided HTML structure
+    const totalQuestions1 = 4; 
+    console.log("Before processing scores");
+    
+
+    // Refactored function to process question groups
+    function processQuestionGroup(startIndex, endIndex, form, score) {
+      let localScore = 0;
+      for (let i = startIndex; i <= endIndex; i++) {
+        const radios = form['question' + i];
+        for (let radio of radios) {
+          if (radio.checked) {
+            localScore += parseInt(radio.value);
+            break;
+          }
+        }
+      }
+      return localScore;
+    }
+    console.log("Scores processed");
+    // Calculate scores using the refactored function
+    score1 = processQuestionGroup(9, 8+totalQuestions1, form, score1);
+    
+
+    const average1 = score1 / totalQuestions1;
+ 
+
+   
+
+    // Determine personality type based on average score
+    function determineBinary(average) {
+      if (average < 3) {
+        return 0;
+      } else {
+        return 1;
+      }
+    }
+    
+    const bin1 = parseInt(localStorage.getItem('bin1'), 10);
+    const bin2 = parseInt(localStorage.getItem('bin2'), 10);
+    bin3 = determineBinary(average1);
+    
+
+      var totalScore = 4*bin1 + 2*bin2 + 1*bin3;
+     
+
+      if (totalScore === 0) {
+        name = 'stubb'; 
+      } else if (totalScore === 1) {
+        name = 'carpenter';
+      } else if (totalScore === 2) {
+        name = 'pip';
+      } else if (totalScore === 3) {
+        name = 'ishmael';
+      } else if (totalScore === 4) {
+        name = 'flask';
+      } else if (totalScore === 5) {
+        name = 'starbuck';
+      } else if (totalScore === 6) {
+        name = 'ahab';
+      } else if (totalScore === 7) {
+        name = 'queequeg';
+      }
+    
+      console.log("Preparing to call callback");
+
+  }
+ 
+function storeNumber(number) {
+    localStorage.setItem('bin3', number);
+}
+</script>
+</body>
+</html>
+
+
+
